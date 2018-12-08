@@ -6,12 +6,11 @@
     apt:
       name: "{{ item }}"
       state: present
-    with_items:
+    with_items: 
       - git
       - tree
       - wget
-    when: ansible_os_family =="Debain"
-
+    when: ansible_os_family =="Debian"
   - name: des instal git,tree and wget on redhat
     yum:
        name: "{{ item }}"
