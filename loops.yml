@@ -1,12 +1,12 @@
 ---
 - hosts: all
-  becomes: yes
+  become: yes
   tasks:
   - name: instal git,tree,& wget on ubuntu
     apt:
       name: "{{item}}"
       state: present
-  with_items:
-     - git:
-     - tree:
-     - wget:
+    with_items:
+      - git:
+      - tree:
+      - wget:
