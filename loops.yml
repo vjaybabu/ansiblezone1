@@ -1,0 +1,8 @@
+---
+- hosts: all
+  becomes: yes
+  tasks:
+  - name: instal git,tree,& wget on ubuntu
+    apt:
+      name:
+      state: present
