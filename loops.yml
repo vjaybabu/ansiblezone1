@@ -10,3 +10,14 @@
       - git:
       - tree:
       - wget:
+    when: ansible_os_family =="Debain"
+
+  - name: des instal git,tree and wget on redhat
+    yum:
+       name: "{{item}}"
+       state: present
+    with_items:
+      - git:
+      - tree:
+      - wget:
+    when: ansible_os_family =="RedHat"
