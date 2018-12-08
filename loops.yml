@@ -4,5 +4,9 @@
   tasks:
   - name: instal git,tree,& wget on ubuntu
     apt:
-      name:
+      name: "{{item}}"
       state: present
+  with_items:
+     - git:
+     - tree:
+     - wget:
