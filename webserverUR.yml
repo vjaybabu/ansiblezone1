@@ -22,4 +22,11 @@
     service:
       name: "{{webserverpackonredhat}}"
       state: started
-    when: ansible_os_family =="RedHat"  
+    when: ansible_os_family =="RedHat" 
+    
+    
+  - name: remove git
+    apt:
+       name: "{{mygit}}"
+       state: absent
+    when: ansible_os_family=="Debain"
